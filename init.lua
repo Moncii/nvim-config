@@ -6,6 +6,7 @@ require("nvim-tree-config")
 require("lualine-config")
 require("treesitter-config")
 require("colorizer-config")
-require("cmp-config")
+-- require("cmp-config")
 require("filetype-config")
 require("telescope-config")
+

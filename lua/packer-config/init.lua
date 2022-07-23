@@ -69,6 +69,4 @@ return require'packer'.startup(function()
 
     use { "nvim-telescope/telescope-file-browser.nvim" }
 
-    use 'kevinhwang91/rnvimr'
-
 end)

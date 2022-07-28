@@ -1,6 +1,8 @@
 return require'packer'.startup(function()
    use 'wbthomason/packer.nvim'
-   use { "ellisonleao/gruvbox.nvim" }
+   -- use { "ellisonleao/gruvbox.nvim" }
+   -- use 'luisiacc/gruvbox-baby'
+   use "EdenEast/nightfox.nvim"
    use {
       'kyazdani42/nvim-tree.lua',
       tag = 'nightly' -- optional, updated every week. (see issue #1193)
@@ -46,10 +48,6 @@ return require'packer'.startup(function()
 
    use("nathom/filetype.nvim")
 
-    use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-        require("toggleterm").setup()
-    end}
-
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
@@ -66,7 +64,5 @@ return require'packer'.startup(function()
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
-    use { "nvim-telescope/telescope-file-browser.nvim" }
 
 end)

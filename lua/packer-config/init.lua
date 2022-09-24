@@ -1,56 +1,68 @@
+
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  vim.cmd [[packadd packer.nvim]]
+end
+
 return require'packer'.startup(function()
-   use 'wbthomason/packer.nvim'
-   -- use { "ellisonleao/gruvbox.nvim" }
-   -- use 'luisiacc/gruvbox-baby'
-   use "EdenEast/nightfox.nvim"
-   use {
-      'kyazdani42/nvim-tree.lua',
-      tag = 'nightly' -- optional, updated every week. (see issue #1193)
-   }
-   use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-   }
-   use 'psliwka/vim-smoothie' use {
-      'goolord/alpha-nvim',
-      config = function ()
-         require'alpha'.setup(require'alpha.themes.dashboard'.config)
-      end
-   }
-   use {
-      'romgrk/barbar.nvim',
-      requires = {'kyazdani42/nvim-web-devicons'}
-   }
+      
+    use 'wbthomason/packer.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
-   use 'neovim/nvim-lspconfig'
+    use('kyazdani42/nvim-web-devicons') -- Icons
+    
+    use 'nvim-lualine/lualine.nvim'
+    
+    use 'psliwka/vim-smoothie'
 
-   use 'hrsh7th/cmp-nvim-lsp'
-   use 'hrsh7th/cmp-buffer'
-   use 'hrsh7th/cmp-path'
-   use 'hrsh7th/cmp-cmdline'
-   use 'hrsh7th/nvim-cmp'
+    use("glepnir/dashboard-nvim") -- Welcom Screen
 
-   use 'saadparwaiz1/cmp_luasnip'
-   use 'L3MON4D3/LuaSnip'
-   use 'rafamadriz/friendly-snippets'
+    use('romgrk/barbar.nvim')
 
-   use 'tpope/vim-commentary'
+    -- LSP and Auto-Complete ------------
+    use {
+        "williamboman/nvim-lsp-installer",
+        "neovim/nvim-lspconfig",
+    }
 
-   use "williamboman/nvim-lsp-installer"
+    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 
-   use {
-      'nvim-treesitter/nvim-treesitter',
-   }
+    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+    use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
-   use 'norcalli/nvim-colorizer.lua'
+    use 'dcampos/nvim-snippy'
+    use 'dcampos/cmp-snippy'
 
-   use "lukas-reineke/indent-blankline.nvim"
+    use "onsails/lspkind.nvim"
 
-   use("nathom/filetype.nvim")
+    ------------------------------------
+
+    use 'tpope/vim-commentary'
+
+
+    use {
+        'nvim-treesitter/nvim-treesitter',
+    }
+    use {
+        'm-demare/hlargs.nvim',
+        requires = { 'nvim-treesitter/nvim-treesitter' }
+    }
+
+    -- use 'David-Kunz/markid'
+    -- use 'norcalli/nvim-colorizer.lua'
+
+    use "lukas-reineke/indent-blankline.nvim"
+
+    use("nathom/filetype.nvim")
+    use('ziglang/zig.vim')
+
+    use('nvim-lua/plenary.nvim')
 
     use {
         "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
         config = function()
         require("todo-comments").setup {
             -- your configuration comes here
@@ -62,7 +74,14 @@ return require'packer'.startup(function()
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use { "nvim-telescope/telescope-file-browser.nvim" }
+
+    use 'MunifTanjim/nui.nvim'
+    use("/home/yoshi/Documents/Projects/Lua/nvim-far")
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 
 end)

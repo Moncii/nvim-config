@@ -1,17 +1,29 @@
-require("telescope").load_extension "file_browser"
-
-local fb_actions = require "telescope".extensions.file_browser.actions
--- mappings in file_browser extension of telescope.setup
-mappings = {
+-- You don't need to set any of these options.
+-- IMPORTANT!: this is only a showcase of how you can set default options!
+require("telescope").setup {
+  extensions = {
+    file_browser = {
+      -- theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
         ["i"] = {
-          -- remap to going to home directory
-          ["<C-h>"] = fb_actions.goto_home_dir,
-          -- ["<C-x>"] = function(prompt_bufnr)
-          ["<C-r>"] = fb_actions.rename,
-            -- your custom function
+          -- your custom insert mode mappings
         },
         ["n"] = {
-          -- unmap toggling `fb_actions.toggle_browser`
-          f = false,
+          -- your custom normal mode mappings
         },
+      },
+    },
+  },
 }
+
+-- c = create file
+-- r = rename file
+-- y = yank file
+-- m = move
+-- h = toggle hidden
+
+-- To get telescope-file-browser loaded and working with telescope,
+-- you need to call load_extension, somewhere after setup function:
+require("telescope").load_extension "file_browser"

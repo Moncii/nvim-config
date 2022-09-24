@@ -3,8 +3,11 @@ local opts = {noremap = true, silent = true}
 
 vim.g.mapleader = ' '
  
-map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
-map('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
+-- map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+-- map('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
+
+map('n', '<F5>', ':make', opts)
+map('n', '<leader>ch', ':match | let @/ = ""<CR>', opts)
 
 map('n', '<S-Tab>', '<<', opts)
 map('i', '<S-Tab>', '<C-d>', opts)

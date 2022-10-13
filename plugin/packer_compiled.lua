@@ -147,7 +147,7 @@ _G.packer_plugins = {
   ["nvim-far"] = {
     loaded = true,
     path = "/home/yoshi/.local/share/nvim/site/pack/packer/start/nvim-far",
-    url = "/home/yoshi/Documents/Projects/Lua/nvim-far"
+    url = "https://github.com/Moncii/nvim-far"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -209,11 +209,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yoshi/.local/share/nvim/site/pack/packer/start/vim-smoothie",
     url = "https://github.com/psliwka/vim-smoothie"
-  },
-  ["zig.vim"] = {
-    loaded = true,
-    path = "/home/yoshi/.local/share/nvim/site/pack/packer/start/zig.vim",
-    url = "https://github.com/ziglang/zig.vim"
   }
 }
 

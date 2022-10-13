@@ -39,7 +39,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { "sumneko_lua", "zls" }
+local servers = { "pyright", "sumneko_lua", "rome", "omnisharp", }
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,

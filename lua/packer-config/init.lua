@@ -57,8 +57,6 @@ return require'packer'.startup(function()
     use "lukas-reineke/indent-blankline.nvim"
 
     use("nathom/filetype.nvim")
-    use('ziglang/zig.vim')
-
     use('nvim-lua/plenary.nvim')
 
     use {
@@ -78,7 +76,7 @@ return require'packer'.startup(function()
     use { "nvim-telescope/telescope-file-browser.nvim" }
 
     use 'MunifTanjim/nui.nvim'
-    use("/home/yoshi/Documents/Projects/Lua/nvim-far")
+    use("Moncii/nvim-far")
 
     if packer_bootstrap then
         require('packer').sync()

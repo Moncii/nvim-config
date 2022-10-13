@@ -4,11 +4,11 @@ require("globals") -- Handy functions for development purposes
 require("mappings"                      )
 require("settings"                      )
 -- Plugin Configs
-require("packer-config"                 )
 require("colorschemes-config.catppuccin")
 require("dashboard-config"              )
 require("lualine-config"                )
 require("treesitter-config"             )
+require("packer-config"                 )
 require("hlargs-config"                 )
 require("filetype-config"               )
 require("telescope-config"              )

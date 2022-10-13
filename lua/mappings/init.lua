@@ -9,8 +9,8 @@ vim.g.mapleader = ' '
 map('n', '<F5>', ':make', opts)
 map('n', '<leader>ch', ':match | let @/ = ""<CR>', opts)
 
-map('n', '<S-Tab>', '<<', opts)
-map('i', '<S-Tab>', '<C-d>', opts)
+-- map('n', '<S-Tab>', '<<', opts)
+-- map('i', '<S-Tab>', '<C-d>', opts)
 
 map('n', '<C-Left>', '<C-W>h', opts)
 map('n', '<C-Down>', '<C-W>j', opts)

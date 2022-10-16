@@ -154,7 +154,7 @@ db.custom_center = {
         icon = "  ",
         desc = "Sync Packages       ",
         shortcut = "       ",
-        action = "PackerSync",
+        action = "PlugInstall",
     },
     {
         icon_hl={fg="#89b4fa"},

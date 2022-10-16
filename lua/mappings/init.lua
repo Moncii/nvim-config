@@ -26,7 +26,7 @@ map('n', '<C-S-Down>', ':resize -4<CR>', opts)
 
 map('n', '<leader>t', ':TodoQuickFix<CR>', opts)
 
-map('n', '<C-s>', ':w<CR>', opts)
+map('n', '<C-s>', ':w!<CR>', opts)
 
 map('n', '<leader>q', ':q!<CR>', opts)
 
